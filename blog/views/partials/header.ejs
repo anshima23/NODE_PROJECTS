@@ -1,0 +1,21 @@
+<header class="header">
+    <a href="/" class="header_logo">NodeJs</a>
+    <nav class="header_nav">
+        <ul>
+            <li><a href="/" class="<%= isActiveRoute('/', currentRoute) %>">Home</a></li>
+            <li><a href="/about" class="<%= isActiveRoute('/about', currentRoute) %>">About</a></li>
+            <li><a href="/contact" class="<%= isActiveRoute('/contact', currentRoute) %>">Contact</a></li>  
+        </ul>
+    </nav>
+    <div class="header_button">
+        <button class="searchBtn" aria-expanded="false">
+            search
+           <img src="/img/search.png"  alt="Search Icon" style="width: 15px; height: 15px;">
+        </button>
+    </div>
+    <div id="searchBar" class="searchBar">
+        <!-- Your search bar content goes here -->
+    </div>
+</header>
+
+

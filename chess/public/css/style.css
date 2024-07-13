@@ -1,0 +1,63 @@
+/* Chessboard container */
+.chessboard {
+    display: grid;
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+    grid-template-rows: repeat(8, minmax(0, 1fr));
+    max-width: 90vw; /* Adjust maximum width as needed */
+    max-height: 90vh; /* Adjust maximum height as needed */
+    transform: rotate(0deg); /* Default rotation */
+    margin: auto; /* Center the chessboard */
+
+    /* Styling for larger screens */
+    @media (min-width: 1024px) {
+        max-width: 800px; /* Adjust for larger screens */
+        max-height: 800px; /* Adjust for larger screens */
+    }
+}
+
+/* Individual square styling */
+.square {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4vw; /* Responsive font size based on viewport width */
+    cursor: pointer;
+}
+
+/* Light square */
+.square.light {
+    background-color: #f0d9b5; /* Light color */
+}
+
+/* Dark square */
+.square.dark {
+    background-color: #b58863; /* Dark color */
+}
+
+/* Piece styling */
+.piece {
+    cursor: grab; /* Default cursor for draggable pieces */
+    transition: transform 0.3s ease; /* Smooth transition for rotation */
+}
+
+/* White piece */
+.piece.white {
+    color: white; /* Color of white pieces */
+    filter: drop-shadow(0 0 2px rgba(0, 0, 0, 1)); /* Optional drop shadow */
+}
+
+/* Black piece */
+.piece.black {
+    color: black; /* Color of black pieces */
+    filter: drop-shadow(0 0 2px rgba(0, 0, 0, 1)); /* Optional drop shadow */
+}
+
+/* Flipped board orientation */
+.flipped {
+    transform: rotate(180deg); /* Rotate the board 180 degrees */
+}
+
+/* Rotate pieces for black's turn */
+.player-black .piece {
+    transform: rotate(180deg); /* Rotate pieces 90 degrees for black's turn */
+}
